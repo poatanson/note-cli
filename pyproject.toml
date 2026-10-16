@@ -1,0 +1,27 @@
+[project]
+name = "note-cli"
+version = "0.1.0"
+description = "Personal quick-note CLI that stores notes as local markdown files"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "typer>=0.27",
+    "rich>=15.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9.0"]
+
+[project.scripts]
+note = "note_cli.main:app"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
